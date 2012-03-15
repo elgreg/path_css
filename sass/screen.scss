@@ -1,0 +1,167 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "buttons/*.png";
+
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#iphone_screen {
+    position: relative;
+    height: 450px;
+    width: 640px;
+}
+
+#share_button_container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+
+@include all-buttons-sprites;
+
+.buttons-add, .buttons-close {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 92px;
+    width: 92px;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+#share_button_container:target .buttons-close {
+    -webkit-transform: rotate(-180deg);
+}
+
+
+#share_button_container:target .buttons-add {
+    display: none;
+}
+
+#buttons-open:target {
+    display: block;
+    -webkit-transform: rotate(-180deg);
+}
+
+
+
+
+.button_action {
+    display: block;
+    position: absolute;
+    bottom: 11px;
+    left: 11px;
+    width: 70px;
+    height: 70px;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+
+#share_button_container:target .button_action {
+    -webkit-transform: rotate(360deg);
+}
+
+
+
+.buttons-camera {
+    -webkit-transition-delay: 0.01s;
+}
+#share_button_container:target .buttons-camera {
+    bottom: 283px; // 272 + 11
+}
+.buttons-person{
+    -webkit-transition-delay: 0.02s;
+}
+#share_button_container:target .buttons-person {
+    left: 95px; // 84 + 11 // cos(72 degrees) * 272 = 84.0526225
+    bottom: 270px; // 259 + 11 // sin(72 degrees) * 272 = 258.687372
+}
+.buttons-location{
+    -webkit-transition-delay: 0.03s;
+}
+#share_button_container:target .buttons-location{
+    left: 171px; // 160 + 11 // cos(54 degrees) * 272 = 159.877589
+    bottom: 231px; // 220 + 11 // sin(54 degrees) * 272 = 220.052622
+}
+.buttons-music{
+    -webkit-transition-delay: 0.04s;
+}
+
+#share_button_container:target .buttons-music {
+    left: 231px; // 220 + 11 // sin(54 degrees) * 272 = 220.052622
+    bottom: 171px; // 160 + 11 // sin(36 degrees) * 272 = 159.877589
+}
+
+.buttons-message {
+    -webkit-transition-delay: 0.05s;
+}
+
+#share_button_container:target .buttons-message {
+    left: 270px; // 259 + 11 // cos(18 degrees) * 272 = 258.687372
+    bottom: 95px; // 84 + 11 // sin(18 degrees) * 272 = 84.0526225
+}
+.buttons-sleep {
+    -webkit-transition-delay: 0.06s;
+}
+
+#share_button_container:target .buttons-sleep {
+    left: 283px;
+    bottom: 11px;
+}
+
+
+
+
+
+
+
+/* ==|== non-semantic helper classes ======================================== */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== media queries ====================================================== */
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+
+/* ==|== print styles ======================================================= */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
