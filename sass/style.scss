@@ -6,6 +6,10 @@
 @import "compass/reset";
 @import "buttons/*.png";
 
+$add_button_spin_duration: 0.3s;
+$action_duration: 0.3s;
+$action_delay: 0.02s;
+
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -60,7 +64,7 @@
     width: 70px;
     height: 70px;
     -webkit-transition-property: all;
-    -webkit-transition-duration: 0.3s;
+    -webkit-transition-duration: $action_duration;
     -webkit-transition-timing-function: ease-in-out;
 }
 
@@ -70,7 +74,8 @@
 }
 
 .buttons-camera {
-    -webkit-transition-delay: 0.01s;
+    -webkit-transition-delay: $action_delay;
+    -webkit-transition-duration: $action_duration + $action_delay;
 }
 #share_button_container:target .buttons-camera {
     bottom: 283px; // 272 + 11
@@ -83,14 +88,17 @@
     bottom: 270px; // 259 + 11 // sin(72 degrees) * 272 = 258.687372
 }
 .buttons-location{
-    -webkit-transition-delay: 0.03s;
+    -webkit-transition-delay: $action_delay*2;
+    -webkit-transition-duration: $action_duration + ($action_delay*2);    
 }
 #share_button_container:target .buttons-location{
     left: 171px; // 160 + 11 // cos(54 degrees) * 272 = 159.877589
     bottom: 231px; // 220 + 11 // sin(54 degrees) * 272 = 220.052622
 }
 .buttons-music{
-    -webkit-transition-delay: 0.04s;
+    -webkit-transition-delay: $action_delay*3;
+    -webkit-transition-duration: $action_duration + ($action_delay*3);
+
 }
 
 #share_button_container:target .buttons-music {
@@ -99,7 +107,9 @@
 }
 
 .buttons-message {
-    -webkit-transition-delay: 0.05s;
+    -webkit-transition-delay: $action_delay*4;
+    -webkit-transition-duration: $action_duration + ($action_delay*4);
+
 }
 
 #share_button_container:target .buttons-message {
@@ -107,16 +117,14 @@
     bottom: 95px; // 84 + 11 // sin(18 degrees) * 272 = 84.0526225
 }
 .buttons-sleep {
-    -webkit-transition-delay: 0.06s;
+    -webkit-transition-delay: $action_delay*5;
+    -webkit-transition-duration: $action_duration + ($action_delay*5);
 }
 
 #share_button_container:target .buttons-sleep {
     left: 283px;
     bottom: 11px;
 }
-
-
-
 
 
 
