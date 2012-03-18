@@ -69,7 +69,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 106, buttons/*.png */
 .buttons-sprite, .buttons-add, .buttons-blar, .buttons-camera, .buttons-close, .buttons-location, .buttons-message, .buttons-music, .buttons-person, .buttons-sleep {
-  background: url('/img/buttons-sb58c02b419.png') no-repeat;
+  background: url('http://elgreg.github.com/path_css/img/buttons-sb58c02b419.png') no-repeat;
 }
 
 /* line 14, ../sass/style.scss */
